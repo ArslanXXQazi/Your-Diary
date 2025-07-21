@@ -1,6 +1,7 @@
 
 
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:yourdiary/src/views/auth_views/sign_up_view.dart';
 import 'package:yourdiary/src/views/starting_views/splash_screen.dart';
 
 class AppRoutes
@@ -13,6 +14,11 @@ class AppRoutes
     GetPage(
       name: splash,
       page: ()=>SplashScreen(),
+    ),
+
+    GetPage(
+      name: signUpView,
+      page: ()=>SignUpView(),
     ),
 
   ];
