@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:yourdiary/src/controller/common_widgets/green_button.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_feild_widget.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_images/app_images.dart';
+import 'package:yourdiary/src/routes/app_routes.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -46,7 +49,7 @@ class SignInView extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ],),
-            SizedBox(height: screenHeight*.03),
+            SizedBox(height: screenHeight*.04),
             GreenButton(onTap: (){}, text: "Sign In"),
             SizedBox(height: screenHeight*.03),
             Row(
@@ -58,7 +61,9 @@ class SignInView extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
                 BlackText(
-                  onTap: (){},
+                  onTap: (){
+                    Get.toNamed(AppRoutes.signUpView);
+                  },
                   text: " Sign Up",
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
