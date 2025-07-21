@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
+import 'package:yourdiary/src/views/botom_nav_view/diary_view/diary_view.dart';
+import '../../../controller/constant/app_images/app_images.dart';
 import '../botom_nav_controller/botom_nav_controller.dart';
 
 class BotomNavView extends StatelessWidget {
   const BotomNavView({super.key});
 
   final List<Widget> _pages = const [
-    Center(child: Text('Tab 1')),
+    DiaryView(),
     Center(child: Text('Tab 2')),
     Center(child: Text('Tab 3')),
-    Center(child: Text('Tab 4')),
+    //Center(child: Text('Tab 4')),
   ];
 
   @override
@@ -21,23 +24,26 @@ class BotomNavView extends StatelessWidget {
             currentIndex: controller.currentIndex.value,
             onTap: controller.changeTab,
             type: BottomNavigationBarType.fixed,
-            items: const [
+            backgroundColor: Colors.white,
+            selectedItemColor: AppColor.blue,
+            unselectedItemColor: Colors.black,
+            items:  [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
+                icon: ImageIcon(AssetImage(AppImages.diary)),
+                label: 'Diary',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
+                icon: ImageIcon(AssetImage(AppImages.chat)),
+                label: 'Messages',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.notifications),
-                label: 'Alerts',
+                icon: ImageIcon(AssetImage(AppImages.settings)),
+                label: 'Settings',
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(Icons.person),
+              //   label: 'Profile',
+              // ),
             ],
           )),
     );
