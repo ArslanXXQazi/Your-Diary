@@ -8,5 +8,9 @@ class AppImages{
   static String settings= "assets/settings.png";
   static String chat= "assets/chat.png";
   static String image1= "assets/image1.png";
+  static String listening= "assets/listening.png";
+  static String watching= "assets/watching.png";
+  static String reading= "assets/reading.png";
+  static String yourSelf= "assets/yourSelf.png";
 
 }
