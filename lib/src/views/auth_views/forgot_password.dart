@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yourdiary/src/controller/common_widgets/green_button.dart';
+import 'package:yourdiary/src/controller/common_widgets/blue_button.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_feild_widget.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'auth_controller/auth_controller.dart';
@@ -40,7 +40,7 @@ class ForgotPassword extends StatelessWidget {
                 validator: authController.validateEmail,
               ),
               SizedBox(height: screenHeight * .04),
-              GreenButton(
+              BlueButton(
                   onTap: () {
                     if (_formKey.currentState?.validate() ?? false) {
                       // No reset logic, just UI

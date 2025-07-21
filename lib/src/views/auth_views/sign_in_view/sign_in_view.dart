@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yourdiary/src/controller/common_widgets/green_button.dart';
+import 'package:yourdiary/src/controller/common_widgets/blue_button.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_feild_widget.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_images/app_images.dart';
@@ -39,14 +39,14 @@ class SignInView extends StatelessWidget {
                 controller: authController.emailController,
                 hintText: "Email",
                 keyboardType: TextInputType.emailAddress,
-                validator: authController.validateEmail,
+               // validator: authController.validateEmail,
               ),
               SizedBox(height: screenHeight * .03),
               Obx(() => TextFieldWidget(
                     controller: authController.passwordController,
                     hintText: "Password",
                     isPassword: true,
-                    validator: authController.validatePassword,
+                  //  validator: authController.validatePassword,
                     suffixIcon: IconButton(
                       icon: Icon(
                         authController.isPasswordObscure.value
@@ -73,10 +73,10 @@ class SignInView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: screenHeight * .04),
-              GreenButton(
+              BlueButton(
                   onTap: () {
                     if (_formKey.currentState?.validate() ?? false) {
-                      // No sign in logic, just UI
+                     Get.toNamed(AppRoutes.botomNavView);
                     } else {
                       autoValidate.value = true;
                     }

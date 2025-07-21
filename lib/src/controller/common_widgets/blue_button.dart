@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
+import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 
-class GreenButton extends StatelessWidget {
+class BlueButton extends StatelessWidget {
   VoidCallback onTap;
   String text;
   double? height;
@@ -14,7 +15,7 @@ class GreenButton extends StatelessWidget {
   Color textColor;
   FontWeight fontWeight;
 
-  GreenButton({
+  BlueButton({
     super.key,
     required this.onTap,
     required this.text,
@@ -40,9 +41,9 @@ class GreenButton extends StatelessWidget {
         width: width ?? double.infinity,
         height: height ??60,
         decoration: BoxDecoration(
-          color: Color(0XFF23ca33),
+          color: AppColor.blue,
           border: Border.all(color: borderColor),
-          borderRadius: BorderRadius.circular(borderRadius ?? 10), // 20 on 400 width ≈ 5%
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
         child: Center(
           child: Row(
