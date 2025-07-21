@@ -63,6 +63,8 @@ class YourTaskWidget extends StatelessWidget {
           BlackText(
             text: "Your completed ${description}%",
             textColor: Colors.grey,
+            fontSize: 14,
+            textAlign: TextAlign.start,
           ),
           SizedBox(height: screenHeight*.02),
           Container(
@@ -73,7 +75,8 @@ class YourTaskWidget extends StatelessWidget {
               backgroundColor: Colors.grey[200],
 
             ),
-          )
+          ),
+
         ],),
     );
   }
