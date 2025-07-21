@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 //===========>>> Utility class for responsive dimensions
 class Responsive {
@@ -16,8 +16,7 @@ class Responsive {
 
   //===========>>> Get responsive font size
   static double fontSize(double size) {
-    return size *
-        (_screenWidth / 375); // Scale based on 375px width (standard mobile)
+    return size * (_screenWidth / 375); // Scale based on 375px width
   }
 
   //===========>>> Get responsive height
@@ -51,20 +50,19 @@ class BlackText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //===========>>> Initialize Responsive utility
+    //===========>>> Responsive utility ko initialize karein
     Responsive.init(context);
 
     return InkWell(
       //===========>>> Tappable text container
       onTap: onTap ?? null,
       child: Text(
-        //===========>>> Display text or empty string
+        //===========>>> Text ya empty string dikhayein
         text ?? "",
         textAlign: textAlign ?? TextAlign.center,
-        style: TextStyle(
-          //===========>>> Responsive font size
-          fontSize:
-          fontSize != null
+        style: GoogleFonts.poppins(
+          //===========>>> Poppins font ka use karein
+          fontSize: fontSize != null
               ? Responsive.fontSize(fontSize!)
               : Responsive.fontSize(16), // Default font size scaled
           fontWeight: fontWeight ?? FontWeight.w500,

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TextFieldWidget extends StatelessWidget {
-
-
-
+class TextFieldWidget extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
   final bool isPassword;
@@ -19,7 +16,6 @@ class TextFieldWidget extends StatelessWidget {
   final Color? borderColor;
   final Color? focusBorderColor;
   final Color? fillColor;
-
 
   const TextFieldWidget({
     Key? key,
@@ -37,47 +33,56 @@ class TextFieldWidget extends StatelessWidget {
     this.borderColor,
     this.focusBorderColor,
     this.hintColor,
-    this.fillColor
+    this.fillColor,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+  State<TextFieldWidget> createState() => _TextFieldWidgetState();
+}
 
+class _TextFieldWidgetState extends State<TextFieldWidget> {
+  bool _obscureText = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.isPassword;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextFormField(
-          controller: controller,
-           obscureText: isPassword,
-          keyboardType: keyboardType,
-          validator: validator,
-          onChanged: onChanged,
-          maxLength: maxLength,
-          maxLines: maxLine??1,
+          controller: widget.controller,
+          obscureText: widget.isPassword ? _obscureText : false,
+          keyboardType: widget.keyboardType,
+          validator: widget.validator,
+          onChanged: widget.onChanged,
+          maxLength: widget.maxLength,
+          maxLines: widget.maxLine ?? 1,
           style: TextStyle(
-            color: textColor ?? Colors.black,
+            color: widget.textColor ?? Colors.black,
           ),
           decoration: InputDecoration(
-            hintText: hintText,
+            hintText: widget.hintText,
             hintStyle: TextStyle(
-              color: hintColor ?? Colors.black,
+              color: widget.hintColor ?? Colors.black,
             ),
             filled: true,
-            fillColor: fillColor?? Colors.grey.shade200,
+            fillColor: widget.fillColor ?? Colors.grey.shade200,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: borderColor ?? Colors.white),
+              borderSide: BorderSide(color: widget.borderColor ?? Colors.white),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: borderColor ?? Colors.white),
+              borderSide: BorderSide(color: widget.borderColor ?? Colors.white),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: focusBorderColor ?? Colors.white),
+              borderSide: BorderSide(color: widget.focusBorderColor ?? Colors.white),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -87,9 +92,22 @@ class TextFieldWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: Colors.red),
             ),
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            errorStyle: TextStyle(
+            suffixIcon: widget.isPassword
+                ? IconButton(
+                    icon: Icon(
+                      _obscureText
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
+                  )
+                : widget.suffixIcon,
+            prefixIcon: widget.prefixIcon,
+            errorStyle: const TextStyle(
               color: Colors.red,
             ),
           ),
