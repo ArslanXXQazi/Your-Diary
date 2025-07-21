@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -10,7 +11,9 @@ class SignInView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
+         BlackText(
+           text: "",
+         )
       ],),
     );
   }

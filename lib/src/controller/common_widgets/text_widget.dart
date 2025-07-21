@@ -31,7 +31,7 @@ class Responsive {
   }
 }
 
-class GreenText extends StatelessWidget {
+class BlackText extends StatelessWidget {
   final String? text;
   final VoidCallback? onTap;
   final double? fontSize;
@@ -39,7 +39,7 @@ class GreenText extends StatelessWidget {
   final Color? textColor;
   final TextAlign? textAlign;
 
-  const GreenText({
+  const BlackText({
     super.key,
     this.text,
     this.onTap,
