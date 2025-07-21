@@ -10,7 +10,7 @@ class DiaryView extends StatelessWidget {
     final screenWidth = MediaQuery.sizeOf(context).width;
     final screenHeight = MediaQuery.sizeOf(context).height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade100,
       body: Column(children: [
         Container(
           height: screenHeight*.3,
@@ -48,10 +48,33 @@ class DiaryView extends StatelessWidget {
                 )
               ],),
               SizedBox(height: screenHeight*.015),
-                
+
             ],),
           ),
         ),
+        SizedBox(height: screenHeight*.02),
+        Padding(
+          padding:  EdgeInsets.symmetric(horizontal: screenWidth*.02),
+          child: Column(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BlackText(
+                  text: "Home Work",
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                BlackText(
+                  onTap: (){},
+                  text: "See all subjects",
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  textColor: AppColor.blue,
+                ),
+              ],),
+            SizedBox(height: screenHeight*.02),
+          ],),
+        )
       ],),
     );
   }
