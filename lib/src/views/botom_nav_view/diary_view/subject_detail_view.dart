@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
+import 'package:yourdiary/src/controller/common_widgets/your_teacher_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 
 class SubjectDetailView extends StatelessWidget {
@@ -15,13 +16,12 @@ class SubjectDetailView extends StatelessWidget {
       backgroundColor: Colors.grey.shade100,
       body: Column(children: [
         Container(
-          height: screenHeight * 0.3,
+          height: screenHeight * 0.28,
           width: double.infinity,
           color: AppColor.blue,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
+            padding: EdgeInsets.only(left: screenHeight*.02,right:screenHeight*.02,top: screenHeight*.06),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                Row(
                  children: [
@@ -35,7 +35,7 @@ class SubjectDetailView extends StatelessWidget {
                    ],),
                  ),
                  Padding(
-                   padding: EdgeInsets.only(left: screenWidth*.3),
+                   padding: EdgeInsets.only(left: screenWidth*.2),
                    child: BlackText(
                      text: "Math",
                      fontSize: 20,
@@ -44,7 +44,7 @@ class SubjectDetailView extends StatelessWidget {
                    ),
                  ),
                ],),
-               SizedBox(height: screenHeight*.02),
+               SizedBox(height: screenHeight*.03),
                Row(
                  children: [
                    Stack(
@@ -75,16 +75,60 @@ class SubjectDetailView extends StatelessWidget {
                        ),
                      ],
                    ),
+                   SizedBox(width: screenWidth*.06),
+                   Expanded(
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.start,
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         BlackText(
+                           text: "Good Results!",
+                           fontSize: 20,
+                           fontWeight: FontWeight.w700,
+                           textColor: Colors.white,
+                         ),
+                         BlackText(
+                           text: "Your homework is almost done.",
+                           fontSize: 16,
+                           textAlign: TextAlign.start,
+                           fontWeight: FontWeight.w500,
+                           textColor: Colors.white,
+                         ),
+                       ],),
+                   )
                  ],
                ),
-               SizedBox(width: screenWidth*.03),
-               Column(children: [
-                 
-               ],)
               ],
             ),
           ),
         ),
+        Padding(
+          padding:  EdgeInsets.symmetric(horizontal: screenWidth*.02,vertical: screenHeight*.04),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            BlackText(
+              text: "Your Teacher",
+              textAlign: TextAlign.start,
+              textColor: Colors.grey,
+            ),
+            SizedBox(height: screenHeight*.02,),
+           YourTeacherWidget(
+               onTap: (){},
+               teacherName: "Arslan Qazi",
+               subjectName: "Math"),
+              SizedBox(height: screenHeight*.02,),
+              BlackText(
+                text: "Your Task",
+                textAlign: TextAlign.start,
+                textColor: Colors.grey,
+              ),
+              SizedBox(height: screenHeight*.02,),
+              Container(
+                
+              )
+          ],),
+        )
       ],),
     );
   }
