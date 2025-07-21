@@ -48,6 +48,7 @@ class DiaryView extends StatelessWidget {
                 )
               ],),
               SizedBox(height: screenHeight*.015),
+                
             ],),
           ),
         ),
