@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:yourdiary/src/routes/app_routes.dart';
 import 'package:yourdiary/src/views/starting_views/splash_screen.dart';
 
 void main() {
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.splash,
+      getPages: AppRoutes.routes,
     );
   }
 }
