@@ -44,7 +44,9 @@ class SignInView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
               BlackText(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.forgotPassword);
+                },
                 text: "Forgot Password?",
                 fontWeight: FontWeight.w600,
               ),
