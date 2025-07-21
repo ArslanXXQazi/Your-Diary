@@ -26,7 +26,7 @@ class BotomNavView extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             backgroundColor: Colors.white,
             selectedItemColor: AppColor.blue,
-            unselectedItemColor: Colors.black,
+            unselectedItemColor: Colors.grey,
             items:  [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AppImages.diary)),

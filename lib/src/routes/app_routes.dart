@@ -5,6 +5,7 @@ import 'package:yourdiary/src/views/auth_views/forgot_password.dart';
 import 'package:yourdiary/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:yourdiary/src/views/auth_views/sign_up_view.dart';
 import 'package:yourdiary/src/views/botom_nav_view/botom_nav_view/botom_nav_view.dart';
+import 'package:yourdiary/src/views/botom_nav_view/diary_view/subject_detail_view.dart';
 import 'package:yourdiary/src/views/starting_views/splash_screen.dart';
 
 class AppRoutes
@@ -14,6 +15,7 @@ class AppRoutes
   static String signInView='/signInView';
   static String forgotPassword='/forgotPassword';
   static String botomNavView='/botomNavView';
+  static String subjectDetailView='/subjectDetailView';
 
   static final routes =
   [
@@ -40,6 +42,11 @@ class AppRoutes
     GetPage(
       name: botomNavView,
       page: ()=>BotomNavView(),
+    ),
+
+    GetPage(
+      name: subjectDetailView,
+      page: ()=>SubjectDetailView(),
     ),
 
 

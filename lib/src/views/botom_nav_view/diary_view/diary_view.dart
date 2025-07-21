@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_feild_widget.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 import 'package:yourdiary/src/controller/constant/app_images/app_images.dart';
+import 'package:yourdiary/src/routes/app_routes.dart';
 
 class DiaryView extends StatelessWidget {
   const DiaryView({super.key});
@@ -17,11 +20,11 @@ class DiaryView extends StatelessWidget {
     final List<Map<String, dynamic>> subjects = [
       {
         'name': 'Math',
-        'task': 'Task 1',
+        'task': 'Task 4',
         'imagePath': AppImages.image1,
         'progress': 1.0, // Set to 100%
         'onTap': () {
-          print('Math tapped');
+         Get.toNamed(AppRoutes.subjectDetailView);
         },
       },
       {
