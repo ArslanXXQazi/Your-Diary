@@ -15,9 +15,13 @@ class DiaryView extends StatelessWidget {
           height: screenHeight*.25,
           width: double.infinity,
           color: AppColor.blue,
-          child: Column(children: [
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
             Row(children: [
-              
+              Column(children: [
+                
+              ],)
             ],)
           ],),
         ),
