@@ -40,12 +40,7 @@ class GreenButton extends StatelessWidget {
         width: width ?? double.infinity,
         height: height ??60,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                Color(0xffAEDC81),
-                Color(0xff6CC51D),
-              ]
-          ),
+          color: Color(0XFF23ca33),
           border: Border.all(color: borderColor),
           borderRadius: BorderRadius.circular(borderRadius ?? 10), // 20 on 400 width ≈ 5%
         ),
@@ -61,7 +56,7 @@ class GreenButton extends StatelessWidget {
               BlackText(
                 text: text,
                 textColor: Colors.white,
-                fontSize: fontSize ?? 15,
+                fontSize: fontSize ?? 16,
                 fontWeight: FontWeight.w600,
               ),
             ],

@@ -63,33 +63,28 @@ class TextFieldWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             hintStyle: TextStyle(
-              color: hintColor ?? Colors.grey,
+              color: hintColor ?? Colors.black,
             ),
-            // contentPadding: EdgeInsets.symmetric(
-            //   horizontal: screenWidth * 0.04,
-            //   vertical:
-            //   isPortrait ? screenHeight * 0.015 : screenHeight * 0.025,
-            // ),
             filled: true,
-            fillColor: fillColor?? Colors.white,
+            fillColor: fillColor?? Colors.grey.shade200,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: borderColor ?? Colors.white),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: borderColor ?? Colors.white),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: focusBorderColor ?? Colors.white),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: Colors.red),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: Colors.red),
             ),
             suffixIcon: suffixIcon,
