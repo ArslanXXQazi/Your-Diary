@@ -29,7 +29,7 @@ class DiaryView extends StatelessWidget {
       },
       {
         'name': 'Science',
-        'task': 'Task 2',
+        'task': 'Task 12',
         'imagePath': AppImages.image1,
         'progress': 0.19,
         'onTap': () {
@@ -209,7 +209,7 @@ class DiaryView extends StatelessWidget {
                                             child: subject['progress'] == 1.0
                                                 ? Icon(
                                               Icons.check_circle_rounded,
-                                              size: screenWidth * 0.1,
+                                              size: screenWidth * 0.085,
                                               color: AppColor.blue,
                                             )
                                                 : BlackText(
