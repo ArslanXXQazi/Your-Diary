@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
+import 'package:yourdiary/src/controller/common_widgets/your_task_widget.dart';
 import 'package:yourdiary/src/controller/common_widgets/your_teacher_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 import 'package:yourdiary/src/controller/constant/app_images/app_images.dart';
@@ -125,63 +126,11 @@ class SubjectDetailView extends StatelessWidget {
                 textColor: Colors.grey,
               ),
               SizedBox(height: screenHeight*.02,),
-              Container(
-                padding: EdgeInsets.all(screenWidth*.03),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                  Stack(
-                    children: [
-                      SizedBox(
-                        height: screenHeight * 0.08,
-                        width: screenWidth * 0.18,
-                        child: CircularProgressIndicator(
-                          value: 0.4,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
-                          backgroundColor: Colors.grey[200],
-                          strokeWidth: screenWidth * 0.013,
-                        ),
-                      ),
-                      Positioned(
-                        left: 0,
-                        right: 0,
-                        top: 0,
-                        bottom: 0,
-                        child:Center(
-                          child: Container(
-                            height: screenHeight*.03,
-                            width: screenWidth*.08,
-                            child: ImageIcon(AssetImage(AppImages.listening),color: Colors.orange,),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: screenHeight*.02),
-                  BlackText(
-                    text: "Listening",
-                  ),
-                  SizedBox(height: screenHeight*.02),
-                  BlackText(
-                    text: "Your completed",
-                    textColor: Colors.grey,
-                  ),
-                  SizedBox(height: screenHeight*.02),
-                  Container(
-                    height: screenHeight*.008,
-                    child: LinearProgressIndicator(
-                      value: 0.4,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                      backgroundColor: Colors.grey[200],
-
-                    ),
-                  )
-                ],),
-              )
+              YourTaskWidget(
+                  image: AppImages.listening,
+                  title: "Listening",
+                  description: "70",
+                  value: .2),
           ],),
         )
       ],),
