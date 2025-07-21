@@ -24,7 +24,6 @@ class SubjectDetailView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                  GestureDetector(
                    onTap: (){Get.back();},
@@ -35,16 +34,52 @@ class SubjectDetailView extends StatelessWidget {
                      ],)
                    ],),
                  ),
-                 BlackText(
-                   text: "Math",
-                   fontSize: 20,
-                   textColor: Colors.white,
-                   fontWeight: FontWeight.w700,
+                 Padding(
+                   padding: EdgeInsets.only(left: screenWidth*.3),
+                   child: BlackText(
+                     text: "Math",
+                     fontSize: 20,
+                     textColor: Colors.white,
+                     fontWeight: FontWeight.w700,
+                   ),
                  ),
-                 BlackText(
-                   text: "xxxx",
-                   textColor: Colors.transparent,
-                 ),
+               ],),
+               SizedBox(height: screenHeight*.02),
+               Row(
+                 children: [
+                   Stack(
+                     children: [
+                       SizedBox(
+                         height: screenWidth * 0.2,
+                         width: screenWidth * 0.2,
+                         child: CircularProgressIndicator(
+                           value: 0.6,
+                           valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                           backgroundColor: Colors.white.withOpacity(.3),
+                           strokeWidth: screenWidth * 0.02,
+                         ),
+                       ),
+                       Positioned(
+                         left: 0,
+                         right: 0,
+                         top: 0,
+                         bottom: 0,
+                         child: Center(
+                           child: BlackText(
+                             text: "60%",
+                             fontSize: 16,
+                             textColor: Colors.white,
+                             fontWeight: FontWeight.w500,
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                 ],
+               ),
+               SizedBox(width: screenWidth*.03),
+               Column(children: [
+                 
                ],)
               ],
             ),
