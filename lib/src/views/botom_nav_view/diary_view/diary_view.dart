@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 
 class DiaryView extends StatelessWidget {
@@ -15,15 +16,31 @@ class DiaryView extends StatelessWidget {
           height: screenHeight*.25,
           width: double.infinity,
           color: AppColor.blue,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            Row(children: [
-              Column(children: [
-                
+          child: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: screenWidth*.02),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  BlackText(
+                    text: "Hello",
+                    textColor: Colors.white,
+                  ),
+                  SizedBox(height: screenHeight*.01),
+                  BlackText(
+                    text: "Victoria",
+                    textColor: Colors.white,
+                    fontSize: 25,
+                  ),
+                ],)
               ],)
-            ],)
-          ],),
+            ],),
+          ),
         ),
       ],),
     );
