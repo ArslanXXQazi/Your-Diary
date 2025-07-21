@@ -13,7 +13,7 @@ class DiaryView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(children: [
         Container(
-          height: screenHeight*.25,
+          height: screenHeight*.3,
           width: double.infinity,
           color: AppColor.blue,
           child: Padding(
@@ -37,8 +37,17 @@ class DiaryView extends StatelessWidget {
                     textColor: Colors.white,
                     fontSize: 25,
                   ),
-                ],)
-              ],)
+                ],),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Container(
+                    height: screenHeight*.08,
+                    width: screenWidth*.18,
+                    color: Colors.white,
+                  ),
+                )
+              ],),
+              SizedBox(height: screenHeight*.015),
             ],),
           ),
         ),
