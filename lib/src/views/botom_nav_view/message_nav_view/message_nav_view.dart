@@ -51,7 +51,18 @@ class MessageNavView extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(screenWidth*.02),
                 child: Column(children: [
-                  
+                  Container(
+                    child: Row(children: [
+                      CircleAvatar(
+                        radius: screenWidth*.08,
+                        backgroundColor: AppColor.blue,
+                      ),
+                      SizedBox(width: screenWidth*.02),
+                      Expanded(child: Column(children: [
+                        
+                      ],))
+                    ],),
+                  )
                 ],),
               ),
             ))
