@@ -9,10 +9,10 @@ import '../../../controller/constant/app_images/app_images.dart';
 import '../botom_nav_controller/botom_nav_controller.dart';
 
 class BotomNavView extends StatelessWidget {
-  const BotomNavView({super.key});
+   BotomNavView({super.key});
 
-  final List<Widget> _pages = const [
-    DiaryView(),
+  final List<Widget> _pages = [
+     DiaryView(),
     MessageNavView(),
     SettingsNavView(),
     //Center(child: Text('Tab 4')),
