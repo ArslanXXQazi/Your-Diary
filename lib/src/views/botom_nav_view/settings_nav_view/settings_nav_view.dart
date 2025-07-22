@@ -78,24 +78,7 @@ class SettingsNavView extends StatelessWidget {
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: screenWidth*.02),
             child: Column(children: [
-              GestureDetector(
-                onTap: (){
-                  print("tappppppppppppppppppp");
-                },
-                child: Container(
-                  padding: EdgeInsets.all(screenWidth*.02),
-                  color: Colors.white,
-                  child: Row(children: [
-                    ImageIcon(AssetImage(AppImages.yourSelf),size:screenWidth*.07,color: AppColor.blue,),
-                    SizedBox(width: screenWidth*.02),
-                    BlackText(
-                      text: "Account Settings",
-                    ),
-                    Spacer(),
-                    Icon(Icons.arrow_forward_ios_outlined,color: AppColor.blue,size: screenWidth*.05,)
-                  ],),
-                ),
-              )
+
             ],),
           )
         ],
