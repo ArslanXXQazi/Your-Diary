@@ -8,17 +8,13 @@ class SettingsButton extends StatelessWidget {
   final VoidCallback onTap;
   final String title;
   final String image;
-  final Color? imageColor;
-  final Color? iconColor;
-  final Color? textColor;
+  final Color? color;
 
    SettingsButton({super.key,
      required this.onTap,
      required this.image,
      required this.title,
-     this.textColor,
-     this.iconColor,
-     this.imageColor
+     this.color,
    });
 
   @override
@@ -26,19 +22,19 @@ class SettingsButton extends StatelessWidget {
     final screenWidth = MediaQuery.sizeOf(context).width;
     final screenHeight = MediaQuery.sizeOf(context).height;
     return GestureDetector(
-      onTap: (){
-      },
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(screenWidth*.02),
         color: Colors.white,
         child: Row(children: [
-          ImageIcon(AssetImage(AppImages.yourSelf),size:screenWidth*.07,color: AppColor.blue,),
-          SizedBox(width: screenWidth*.02),
+          ImageIcon(AssetImage(image),size:screenWidth*.07,color: color?? AppColor.blue,),
+          SizedBox(width: screenWidth*.04),
           BlackText(
-            text: "Account Settings",
+            text: title,
+            textColor: color,
           ),
           Spacer(),
-          Icon(Icons.arrow_forward_ios_outlined,color: AppColor.blue,size: screenWidth*.05,)
+          Icon(Icons.arrow_forward_ios_outlined,color:color?? AppColor.blue,size: screenWidth*.05,)
         ],),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:yourdiary/src/controller/common_widgets/settings_button.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 import 'package:yourdiary/src/controller/constant/app_images/app_images.dart';
@@ -77,9 +78,55 @@ class SettingsNavView extends StatelessWidget {
           SizedBox(height: screenHeight*.02),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: screenWidth*.02),
-            child: Column(children: [
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Container(
+                color: Colors.white,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: screenHeight*.015),
+                  child: Column(children: [
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.account,
+                        title: "Account Settings"),
+                    Divider(color: Colors.grey.shade200,),
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.notification,
+                        title: "Notification"),
+                    Divider(color: Colors.grey.shade200,),
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.language,
+                        title: "Language"),
+                    Divider(color: Colors.grey.shade200,),
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.password,
+                        title: "Password"),
+                    Divider(color: Colors.grey.shade200,),
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.privacy,
+                        title: "Privacy Policy"),
+                    Divider(color: Colors.grey.shade200,),
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.help,
+                        title: "Help & Support"),
+                    Divider(color: Colors.grey.shade200,),
+                    SettingsButton(
+                        onTap: (){},
+                        image: AppImages.logOut,
+                        title: "Log out",
+                        color: Colors.red,
+                    ),
 
-            ],),
+
+                  ],),
+                ),
+              ),
+            ),
           )
         ],
       ),

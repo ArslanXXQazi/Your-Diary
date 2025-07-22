@@ -12,5 +12,12 @@ class AppImages{
   static String watching= "assets/watching.png";
   static String reading= "assets/reading.png";
   static String yourSelf= "assets/yourSelf.png";
+  static String account= "assets/account.png";
+  static String notification= "assets/notification.png";
+  static String language= "assets/language.png";
+  static String password= "assets/password.png";
+  static String privacy= "assets/privacy.png";
+  static String help= "assets/help.png";
+  static String logOut= "assets/logOut.png";
 
 }
