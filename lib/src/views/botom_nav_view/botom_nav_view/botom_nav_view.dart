@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 import 'package:yourdiary/src/views/botom_nav_view/diary_view/diary_view.dart';
-import 'package:yourdiary/src/views/botom_nav_view/message_nav_view/message_nav_view.dart';
+import 'package:yourdiary/src/views/botom_nav_view/message_nav_view/chat_screen.dart';
 import 'package:yourdiary/src/views/botom_nav_view/settings_nav_view/settings_nav_view.dart';
 import '../../../controller/constant/app_images/app_images.dart';
 import '../botom_nav_controller/botom_nav_controller.dart';
