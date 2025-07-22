@@ -4,6 +4,8 @@ import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
+import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
 
 // Chat Screen class with state
 class ChatScreen extends StatefulWidget {
@@ -134,14 +136,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.blueAccent,
-      title: const Text(
-        'Chat Screen',
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      backgroundColor: AppColor.blue,
+      title: BlackText(
+        text: "Chat Screen",
+        textColor: Colors.white,
+        fontWeight: FontWeight.w700,
+        fontSize: 20,
       ),
       centerTitle: true,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back, color: Colors.white),
+        icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
     );
