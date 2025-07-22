@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:yourdiary/src/controller/common_widgets/blue_button.dart';
 import 'package:yourdiary/src/controller/common_widgets/settings_button.dart';
 import 'package:yourdiary/src/controller/common_widgets/text_widget.dart';
 import 'package:yourdiary/src/controller/constant/app_colors/app_color.dart';
@@ -116,14 +118,48 @@ class SettingsNavView extends StatelessWidget {
                         title: "Help & Support"),
                     Divider(color: Colors.grey.shade200,),
                     SettingsButton(
-                        onTap: (){},
+                        onTap: (){
+                          Get.dialog(
+                              AlertDialog(
+                                backgroundColor: Colors.white,
+                                title: BlackText(
+                                  text: "Are you sure you want to logout",
+                                  textColor: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                actions: [
+                                  Row(children: [
+                                    Expanded(child: BlueButton(
+                                      onTap: (){
+                                        Get.back();
+                                      },
+                                      text: "Go Back",
+                                      textColor: Colors.black,
+                                      borderRadius: 50,
+                                      borderColor: Colors.black,
+                                      color: Colors.white,
+                                    )),
+                                    SizedBox(width: screenWidth*.04),
+                                    Expanded(child: BlueButton(
+                                      onTap: (){
+                                      },
+                                      text: "Logout",
+                                      borderRadius: 50,
+                                      color: Colors.red,
+                                      textColor: Colors.white,
+                                    )),
+                                  ],)
+                                ],
+                              )
+                            );
+                        },
                         image: AppImages.logOut,
                         title: "Log out",
                         color: Colors.red,
                     ),
-
-
-                  ],),
+                  ],
+                  ),
                 ),
               ),
             ),

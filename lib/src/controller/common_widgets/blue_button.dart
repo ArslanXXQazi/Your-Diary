@@ -12,7 +12,7 @@ class BlueButton extends StatelessWidget {
   String? image;
   Color? color;
   Color borderColor;
-  Color textColor;
+  Color? textColor;
   FontWeight fontWeight;
 
   BlueButton({
@@ -24,7 +24,7 @@ class BlueButton extends StatelessWidget {
     this.fontSize,
     this.color ,
     this.borderColor = Colors.white,
-    this.textColor = Colors.black,
+    this.textColor ,
     this.fontWeight = FontWeight.w500,
     this.image,
     this.borderRadius
@@ -41,7 +41,7 @@ class BlueButton extends StatelessWidget {
         width: width ?? double.infinity,
         height: height ??60,
         decoration: BoxDecoration(
-          color: AppColor.blue,
+          color: color ?? AppColor.blue,
           border: Border.all(color: borderColor),
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
@@ -56,7 +56,7 @@ class BlueButton extends StatelessWidget {
                 ),
               BlackText(
                 text: text,
-                textColor: Colors.white,
+                textColor: textColor ?? Colors.white,
                 fontSize: fontSize ?? 16,
                 fontWeight: FontWeight.w600,
               ),
